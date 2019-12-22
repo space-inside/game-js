@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Найди баг"</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body class="content">
+    <nav class="menu">
+        <h2 class="menu__title">Выберите уровень сложности:</h2>
+        <h3 class="menu__subtitle">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</h3>
+        <div class="menu__level-wrap">
+            <input type="radio" class="menu__level" id="simple" name="levels" value="simple" checked>
+            <label class="level__active" for="simple">Простой</label>
+            <input type="radio" class="menu__level" id="middle" name="levels" value="middle">
+            <label for="middle" class="level__middle">Средний</label>
+            <input type="radio" class="menu__level" id="hard" name="levels" value="hard">
+            <label for="hard" class="level__hard">Сложный</label>
+        </div>
+        <button class="menu__start">Начать игру</button>
+        <div class="cards-wrap">
+            <img src="img/card.png" alt="#" class="card__left">
+            <img src="img/card.png" alt="#" class="card__right">
+        </div>
+    </nav>
+    <script type="text/javascript" src="script.js"></script>   
+</body>
+</html>
