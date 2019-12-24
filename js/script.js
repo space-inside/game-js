@@ -7,12 +7,12 @@ const levelObj = {
 let buttonStart = document.querySelector('.menu__start');
 buttonStart.addEventListener('click', chooseLevel);
 function chooseLevel() {
-    let levels = document.querySelectorAll('.menu__level');
+    let levels = [...document.querySelectorAll('.menu__level')];
     let looTable = document.createElement('div');
     looTable.classList.add('loo-table');
     body.append(looTable);
-    for (let i = 0; i < levels.length; i++) {
-        if (levels[i].checked) {
+    levels.forEach(function (level, i) {
+        if (level.checked) {
             let menu = document.querySelector('.menu');
             menu.style.display = 'none';
             let level = levels[i].value;
@@ -41,24 +41,22 @@ function chooseLevel() {
             }
             generateBug();
             flip();
-
         }    
-    }
+    });
 }
 function generateBug() {
-    let amountCard = document.querySelectorAll('.card');
-    let amountBackCard = document.querySelectorAll('.card-back-img');
+    let amountCard = [...document.querySelectorAll('.card')];
+    let amountBackCard = [...document.querySelectorAll('.card-back-img')];
     let bug = (function() {
-        return Math.round(Math.random()*amountCard.length);
+        return Math.round(Math.random()*(amountCard.length - 1));
     })();
     amountBackCard[bug].src = "img/bug.png";
 }
 
 let flippedCard = false;
 function flip() {
-    let cards = document.querySelectorAll('.card');
-    let cardsInner = document.querySelectorAll('.card-inner');
-
+    let cards = [...document.querySelectorAll('.card')];
+    let cardsInner = [...document.querySelectorAll('.card-inner')];
     cards.forEach(function (card, i) {
         card.addEventListener('click', function () {
             if (flippedCard) {
@@ -66,6 +64,7 @@ function flip() {
                 looTable.remove();
                 let menu = document.querySelector('.menu');
                 menu.style.display = 'flex';
+                body.classList.remove('content'+cards.length);
                 flippedCard = false;
             }
             else {

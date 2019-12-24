@@ -2,18 +2,22 @@
     background-image: url(../img/bcgd.png);
     background-size: cover;
     background-repeat: no-repeat;
-    max-width: 1440px;
+    width: 100%;
+    max-width: 1500px;
     min-width: 320px;
-    min-height: 1024px;
+    min-height: 800px;
     margin: 0 auto;
-    padding: 103px 69px;
+    padding: calc(69px - 2 * (69px - (69 * 100% / 1024))) calc(103px - 2 * (103px - (103 * 100% / 1440)));
     box-sizing: border-box;
     position: relative;
+    overflow-x: hidden;
 }
 .content3 {
-    padding: 341px calc(369px - 2 * (369px - (369 * 100% / 1440)));
+    padding: calc(100px - 2 * (100px - (100 * 100% / 1024))) calc(349px - 2 * (349px - (349 * 100% / 1440)));
     box-sizing: border-box;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 .content3 .card {
     margin-bottom: 0;
@@ -22,7 +26,7 @@
     margin: 0;
 }
 .content6, .content9 {
-    padding: 159px calc(350px - 2 * (350px - (350 * 100% / 1440)));;
+    padding: calc(59px - 2 * (59px - (59 * 100% / 1024))) calc(350px - 2 * (350px - (350 * 100% / 1440)));;
 }
 .content6 .card, .content9 .card {
     margin: 0 24px 24px 0;
@@ -87,7 +91,7 @@
 }
 .level__active, .level__middle, .level__hard {
     cursor: pointer;
-    font-family: Roboto;
+    font-family: "Roboto";
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
@@ -149,6 +153,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    align-content: center;
 }
 .card {
     background-color: transparent;
@@ -158,6 +163,7 @@
     margin: 0 24px 24px 0;
 }
 .card:hover {
+    transition: transform 0.6s ease-in-out;
     transform: rotate(-3.08deg);
 }
 .card:hover .card-inner {
@@ -195,16 +201,17 @@
 .card-back {
     transform: rotateY(180deg);
 }
-@media screen and (min-width: 768px) and (max-width: 1100px) {
-    .cards-wrap {
-        position: absolute;
-        bottom: 424px;
-        right: 90px;
+@media screen and (min-width: 768px) {
+    .content3 .loo-table {
+        padding: calc(200px - 2 * (200px - (200 * 100% / 800))) 0;
+        box-sizing: border-box;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1099px) {
     .cards-wrap {
-        right: 130px;
+        position: absolute;
+        bottom: 124px;
+        right: 90px;
     }
     .level__active, .level__middle, .level__hard {
         font-size: 45px;
@@ -231,22 +238,25 @@
     }
 }
 @media screen and (min-width: 768px) and (max-width: 850px) {
+    .content, .content3 {
+        min-height: 1024px;
+    }
     .content3 {
-        padding: 341px calc(450px - 2 * (450px - (450 * 100% / 1440)));
+        padding: calc(341px - 2 * (341px - (341 * 100% / 1024))) calc(369px - 2 * (369px - (369 * 100% / 1440)));
     }
     .content3 .card {
         margin: 0 15px 0 0;
     }
     .cards-wrap {
         right: 90px;
-        bottom: 404px;
+        bottom: 104px;
     }
     .card__left, .card__right {
         width: 148px;
         height: 231px;
     }
     .content6, .content9 {
-        padding: 281px calc(400px - 2 * (400px - (400 * 100% / 1440)));
+        padding: calc(281px - 2 * (281px - (281 * 100% / 1024))) calc(400px - 2 * (400px - (400 * 100% / 1440)));
     }
     .content6 .card, .content9 .card {
         width: 188px;
@@ -288,7 +298,7 @@
         margin: 0 auto;
     }
     .content6, .content9 {
-        padding: 200px calc(70px - 2 * (70px - (70 * 100% / 760)));
+        padding: 110px calc(70px - 2 * (70px - (70 * 100% / 760)));
     }
     .content6 .card, .content9 .card {
         width: 168px;
