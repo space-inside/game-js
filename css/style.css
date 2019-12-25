@@ -3,7 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1440px;
     min-width: 320px;
     min-height: 800px;
     margin: 0 auto;
@@ -162,8 +162,8 @@
     perspective: 1000px;
     margin: 0 24px 24px 0;
 }
-.card:hover {
-    transition: transform 0.6s ease-in-out;
+.card-hover:hover {
+    transition: transform 0.6s ease;
     transform: rotate(-3.08deg);
 }
 .card:hover .card-inner {
